@@ -29,7 +29,7 @@ app.get('/health', (req, res) => {
 // Item routes
 app.use("/api/items", itemRoutes);
 
-// 404 catch-all
+// 404 
 app.use((req, res) => {
   const status = statusCodes.find(item => item.code === 404);
   res.status(status.code).json({ success: false, message: "URL " + req.originalUrl + " " + status.message });
